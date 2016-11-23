@@ -1,0 +1,110 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Database {
+	static Map<String, List<String>> publicT;
+	static Map<String, List<String>> taxi;
+	static Map<String, List<String>> foot;
+	
+	public Database() {
+        /*because combination matters - AtoB != BtoA, the key will be the concatenated AB*/
+		publicT = new HashMap<String, List<String>>();
+        taxi = new HashMap<String, List<String>>();
+        foot = new HashMap<String, List<String>>();
+
+        publicT.put("Hotel-Singapore Flyer",Arrays.asList("17","0.83"));
+        publicT.put("Singapore Flyer-Hotel",Arrays.asList("17","0.83"));
+        publicT.put("Hotel-Vivo City",Arrays.asList("26","1.18"));
+        publicT.put("Vivo City-Hotel",Arrays.asList("24","1.18"));
+        publicT.put("Hotel-Resorts World Sentosa",Arrays.asList("35","4.03"));
+        publicT.put("Resorts World Sentosa-Hotel",Arrays.asList("33","1.18"));
+        publicT.put("Hotel-Buddha Tooth Relic Temple",Arrays.asList("19","0.88"));
+        publicT.put("Buddha Tooth Relic Temple-Hotel",Arrays.asList("18","0.88"));
+        publicT.put("Hotel-Zoo",Arrays.asList("17","1.96"));
+        publicT.put("Zoo-Hotel",Arrays.asList("86","1.88"));
+        publicT.put("Singapore Flyer-Vivo City",Arrays.asList("31","1.26"));
+        publicT.put("Vivo City-Singapore Flyer",Arrays.asList("29","1.26"));
+        publicT.put("Singapore Flyer-Resorts World Sentosa",Arrays.asList("38","4.03"));
+        publicT.put("Resorts World Sentosa-Singapore Flyer",Arrays.asList("38","1.26"));
+        publicT.put("Singapore Flyer-Buddha Tooth Relic Temple",Arrays.asList("23","0.98"));
+        publicT.put("Buddha Tooth Relic Temple-Singapore Flyer",Arrays.asList("24","0.98"));
+        publicT.put("Singapore Flyer-Zoo",Arrays.asList("85","1.89"));
+        publicT.put("Zoo-Singapore Flyer",Arrays.asList("87","1.96"));
+        publicT.put("Vivo City-Resorts World Sentosa",Arrays.asList("10","2.00"));
+        publicT.put("Resorts World Sentosa-Vivo City",Arrays.asList("10","0.00"));
+        publicT.put("Vivo City-Buddha Tooth Relic Temple",Arrays.asList("18","0.98"));
+        publicT.put("Buddha Tooth Relic Temple-VivoCity",Arrays.asList("19","0.98"));
+        publicT.put("Vivo City-Zoo",Arrays.asList("86","2.11"));
+        publicT.put("Zoo-Vivo City", Arrays.asList("85", "1.99"));
+        publicT.put("Resorts World Sentosa-Buddha Tooth Relic Temple",Arrays.asList("27","0.98"));
+        publicT.put("Buddha Tooth Relic Temple-Resorts World Sentosa",Arrays.asList("10","0.00"));
+        publicT.put("Resorts World Sentosa-Zoo",Arrays.asList("10","0.00"));
+        publicT.put("Zoo-Resorts World Sentosa",Arrays.asList("10","0.00"));
+        publicT.put("Buddha Tooth Relic Temple-Zoo",Arrays.asList("83","1.91"));
+        publicT.put("Zoo-Buddha Tooth Relic Temple",Arrays.asList("84","1.91"));
+
+        taxi.put("Hotel-Singapore Flyer",Arrays.asList("3","3.22"));
+        taxi.put("Singapore Flyer-Hotel",Arrays.asList("6","4.32"));
+        taxi.put("Hotel-Vivo City",Arrays.asList("14","6.96"));
+        taxi.put("Vivo City-Hotel",Arrays.asList("12","8.30"));
+        taxi.put("Hotel-Resorts World Sentosa",Arrays.asList("19","8.50"));
+        taxi.put("Resorts World Sentosa-Hotel",Arrays.asList("13","8.74"));
+        taxi.put("Hotel-Buddha Tooth Relic Temple",Arrays.asList("8","4.98"));
+        taxi.put("Buddha Tooth Relic TempleHotel",Arrays.asList("7","5.32"));
+        taxi.put("Hotel-Zoo",Arrays.asList("30","18.40"));
+        taxi.put("Zoo-Hotel",Arrays.asList("30","21.60"));
+        taxi.put("Singapore Flyer-Vivo City",Arrays.asList("13","7.84"));
+        taxi.put("Vivo City-Singapore Flyer",Arrays.asList("14","7.96"));
+        taxi.put("Singapore Flyer-Resorts World Sentosa",Arrays.asList("18","9.38"));
+        taxi.put("Resorts World Sentosa-Singapore Flyer",Arrays.asList("14","8.40"));
+        taxi.put("Singapore Flyer-Buddha Tooth Relic Temple",Arrays.asList("8","4.76"));
+        taxi.put("Buddha Tooth Relic Temple-Singapore Flyer",Arrays.asList("8","4.76"));
+        taxi.put("Singapore Flyer-Zoo",Arrays.asList("29","18.18"));
+        taxi.put("Zoo-Singapore Flyer",Arrays.asList("29","19.40"));
+        taxi.put("Vivo City-Resorts World Sentosa",Arrays.asList("9","4.54"));
+        taxi.put("Resorts World Sentosa-Vivo City",Arrays.asList("4","3.22"));
+        taxi.put("Vivo City-Buddha Tooth Relic Temple",Arrays.asList("12","6.64"));
+        taxi.put("Buddha Tooth Relic Temple-Vivo City",Arrays.asList("9","4.98"));
+        taxi.put("Vivo City-Zoo",Arrays.asList("31","22.58"));
+        taxi.put("Zoo-Vivo City", Arrays.asList("32", "21.48"));
+        taxi.put("Resorts World Sentosa-Buddha Tooth Relic Temple",Arrays.asList("12","6.64"));
+        taxi.put("Buddha Tooth Relic Temple-Resorts World Sentosa",Arrays.asList("14","6.52"));
+        taxi.put("Resorts World Sentosa-Zoo",Arrays.asList("32","22.80"));
+        taxi.put("Zoo-Resorts World Sentosa",Arrays.asList("36","23.68"));
+        taxi.put("Buddha Tooth Relic Temple-Zoo",Arrays.asList("30","18.40"));
+        taxi.put("Zoo-Buddha Tooth Relic Temple",Arrays.asList("30","21.60"));
+
+        foot.put("Hotel-Singapore Flyer",Arrays.asList("14","0.00"));
+        foot.put("Singapore Flyer-Hotel",Arrays.asList("14","0.0"));
+        foot.put("Hotel-Vivo City",Arrays.asList("69","0.0"));
+        foot.put("Vivo City-Hotel",Arrays.asList("69","0"));
+        foot.put("Hotel-Resorts World Sentosa",Arrays.asList("76","0"));
+        foot.put("Resorts World Sentosa-Hotel",Arrays.asList("76","0"));
+        foot.put("Hotel-Buddha Tooth Relic Temple",Arrays.asList("28","0.0"));
+        foot.put("Buddha Tooth Relic Temple-Hotel",Arrays.asList("28","0.0"));
+        foot.put("Hotel-Zoo",Arrays.asList("269","0"));
+        foot.put("Zoo-Hotel",Arrays.asList("269","0"));
+        foot.put("Singapore Flyer-Vivo City",Arrays.asList("81","0"));
+        foot.put("Vivo City-Singapore Flyer",Arrays.asList("81","0"));
+        foot.put("Singapore Flyer-Resorts World Sentosa",Arrays.asList("88","0"));
+        foot.put("Resorts World Sentosa-Singapore Flyer",Arrays.asList("88","0"));
+        foot.put("Singapore Flyer-Buddha Tooth Relic Temple",Arrays.asList("39","0.0"));
+        foot.put("Buddha Tooth Relic Temple-Singapore Flyer",Arrays.asList("39","0.0"));
+        foot.put("Singapore Flyer-Zoo",Arrays.asList("264","0"));
+        foot.put("Zoo-Singapore Flyer",Arrays.asList("264","0"));
+        foot.put("Vivo City-Resorts World Sentosa",Arrays.asList("12","0"));
+        foot.put("Resorts World Sentosa-Vivo City",Arrays.asList("12","0.00"));
+        foot.put("Vivo City-Buddha Tooth Relic Temple",Arrays.asList("47","0.0"));
+        foot.put("Buddha Tooth Relic Temple-Vivo City",Arrays.asList("47","0.0"));
+        foot.put("Vivo City-Zoo",Arrays.asList("270","0"));
+        foot.put("Zoo-Vivo City", Arrays.asList("270", "0"));
+        foot.put("Resorts World Sentosa-Buddha Tooth Relic Temple",Arrays.asList("55","0.0"));
+        foot.put("Buddha Tooth Relic Temple-Resorts World Sentosa",Arrays.asList("55","0.0"));
+        foot.put("Resorts World Sentosa-Zoo",Arrays.asList("285","0.00"));
+        foot.put("Zoo-Resorts World Sentosa",Arrays.asList("285","0.00"));
+        foot.put("Buddha Tooth Relic Temple-Zoo",Arrays.asList("264","0"));
+        foot.put("Zoo-Buddha Tooth Relic Temple",Arrays.asList("264","0"));
+    }
+}
