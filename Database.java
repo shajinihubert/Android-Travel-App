@@ -35,7 +35,7 @@ public class Database {
         publicT.put("Vivo City-Resorts World Sentosa",Arrays.asList("10","2.00"));
         publicT.put("Resorts World Sentosa-Vivo City",Arrays.asList("10","0.00"));
         publicT.put("Vivo City-Buddha Tooth Relic Temple",Arrays.asList("18","0.98"));
-        publicT.put("Buddha Tooth Relic Temple-VivoCity",Arrays.asList("19","0.98"));
+        publicT.put("Buddha Tooth Relic Temple-Vivo City",Arrays.asList("19","0.98"));
         publicT.put("Vivo City-Zoo",Arrays.asList("86","2.11"));
         publicT.put("Zoo-Vivo City", Arrays.asList("85", "1.99"));
         publicT.put("Resorts World Sentosa-Buddha Tooth Relic Temple",Arrays.asList("27","0.98"));
@@ -52,7 +52,7 @@ public class Database {
         taxi.put("Hotel-Resorts World Sentosa",Arrays.asList("19","8.50"));
         taxi.put("Resorts World Sentosa-Hotel",Arrays.asList("13","8.74"));
         taxi.put("Hotel-Buddha Tooth Relic Temple",Arrays.asList("8","4.98"));
-        taxi.put("Buddha Tooth Relic TempleHotel",Arrays.asList("7","5.32"));
+        taxi.put("Buddha Tooth Relic Temple-Hotel",Arrays.asList("7","5.32"));
         taxi.put("Hotel-Zoo",Arrays.asList("30","18.40"));
         taxi.put("Zoo-Hotel",Arrays.asList("30","21.60"));
         taxi.put("Singapore Flyer-Vivo City",Arrays.asList("13","7.84"));

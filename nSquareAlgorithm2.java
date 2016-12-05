@@ -15,13 +15,15 @@ public class nSquareAlgorithm2 {
 		inputList.add("Buddha Tooth Relic Temple");
 		inputList.add("Zoo");
 		inputList.add("Vivo City");
+		inputList.add("Singapore Flyer");
 		String transportMethod = "publicT";
-		String orTimeCost = "cost";
-		String s = myRoute(inputList,transportMethod,orTimeCost);
+		String orTimeCost = "time";
+		List<String> s = myRoute(inputList,transportMethod,orTimeCost);
+		s.indexOf(transportMethod);
 		System.out.print(s);
 	}	
 
-	public static String myRoute(List<String> inputList, String transportMethod, String orTimeCost){
+	public static List<String> myRoute(List<String> inputList, String transportMethod, String orTimeCost){
 		Map<String, Integer> Time = new HashMap<>();
 		Map<String, Long> Cost = new HashMap<>();
 		ArrayList<Long> eachRouteCost = new ArrayList<>();
@@ -69,7 +71,7 @@ public class nSquareAlgorithm2 {
 			eachRouteCost.clear();
 	
 			for(String item : eachPathway){						//assume each item is key for database
-				
+//				System.out.print(item + "\n");
 				if(transportMethod == publicT){
 				String buscost = Database.publicT.get(item).get(1);
 				String bustime = Database.publicT.get(item).get(0);
@@ -119,28 +121,13 @@ public class nSquareAlgorithm2 {
 			returnVal = String.valueOf(minCost);
 		}
 		
-		return returnVal;
+		
+		List<String> x = prepNodes(returnVal);
+		return x;
 
 	}
 
-		public static List<List<String>> listPermutations(List<String> pathCombinations) {
-		    if (pathCombinations.size() == 0) {
-		        List<List<String>> result = new ArrayList<List<String>>();
-		        result.add(new ArrayList<String>());
-		        return result;
-		    }
-		    List<List<String>> returnMe = new ArrayList<List<String>>();
-		    String firstElement = pathCombinations.remove(0);
-		    List<List<String>> recursiveReturn = listPermutations(pathCombinations);
-		    for (List<String> li : recursiveReturn) {
-		        for (int index = 0; index <= li.size(); index++) {
-		            List<String> temp = new ArrayList<String>(li);
-		            temp.add(index, firstElement);
-		            returnMe.add(temp);
-		        }
-		    }
-		    return returnMe;
-		}
+	
 		
 		public static int factorial(int num){
 			int fact = 1;
@@ -200,4 +187,23 @@ public class nSquareAlgorithm2 {
 			rawAnswer = rawAnswer.replaceAll("\\D+","");
 			return rawAnswer;
 		}		
+		
+		public static List<List<String>> listPermutations(List<String> pathCombinations) {
+		    if (pathCombinations.size() == 0) {
+		        List<List<String>> result = new ArrayList<List<String>>();
+		        result.add(new ArrayList<String>());
+		        return result;
+		    }
+		    List<List<String>> returnMe = new ArrayList<List<String>>();
+		    String firstElement = pathCombinations.remove(0);
+		    List<List<String>> recursiveReturn = listPermutations(pathCombinations);
+		    for (List<String> li : recursiveReturn) {
+		        for (int index = 0; index <= li.size(); index++) {
+		            List<String> temp = new ArrayList<String>(li);
+		            temp.add(index, firstElement);
+		            returnMe.add(temp);
+		        }
+		    }
+		    return returnMe;
+		}
 }

@@ -24,19 +24,17 @@ public class FastSolver{
     public static void main (String args[]) {
     	
     	ArrayList<String> choicelist = new ArrayList<>();
-        choicelist.add("Resorts World Sentosa");
+//        choicelist.add("Resorts World Sentosa");
         choicelist.add("Buddha Tooth Relic Temple");
         choicelist.add("Singapore Flyer");
         choicelist.add("Zoo");
         choicelist.add("Vivo City");
     	
-    	String transportMethod = "taxi";
+    	String transportMethod = "foot";
     	String orTimeCost = "time";
     	
     	ArrayList<String> x = myRoute(choicelist, transportMethod, orTimeCost);
-    	System.out.print(x);
-        
-       
+    	System.out.print(x); 
     }
     
     public static ArrayList<String> myRoute(ArrayList<String> choicelist, String transportMethod, String orTimeCost){
@@ -58,7 +56,8 @@ public class FastSolver{
         }
         
         //last node
-        finalOrder.add(choicelist.get(0));
+        if (choicelist.size()>0)
+        	finalOrder.add(choicelist.get(0));
 		return finalOrder;
     	
     }
@@ -118,6 +117,7 @@ public class FastSolver{
 				return ((Comparable)((Map.Entry)(obj1)).getValue()).compareTo(((Map.Entry)(obj2)).getValue());
 				}
 			});
+		System.out.print(list.get(0));
 		return list.get(0);
 	}
  
